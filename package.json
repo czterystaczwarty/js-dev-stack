@@ -17,10 +17,11 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^2.6.0"
   },
-  // specyfic jsHint settings
   "jshintConfig": {
-    // allow ES6
     "esnext": true,
-    "browserify": true,
+    "browserify": true
+  },
+  "dependencies": {
+    "jquery": "^2.1.3"
   }
 }

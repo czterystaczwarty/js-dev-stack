@@ -37,9 +37,22 @@ $ npm run build-dev
 #### Task `watch`
 * nasłuchuje na zmianach wszystkich modułów, od kótrych zależy `main.js` i przebudowuje tak samo jak `build-dev`,
 
+#### praca z jQuery
+```sh
+$ npm install --save jquery
+```
+
+```js
+var jQuery, $;
+// private binding - this module only
+jQuery = $ = require("jquery");
+// global binding form dev tools
+window.jQuery = window.$ = jQuery;
+```
+
 TODO:
 --------
-- [ ] przykład dodania zależności via npm,
+- [x] przykład dodania zależności via npm (jQuery),
 - [ ] przykład dodania zależności via Bower
 	- https://github.com/eugeneware/debowerify,
 - [ ] taski `build-dev` i `watch` powinny korzystać z tej samej konfiguracji bundli,
