@@ -15,15 +15,22 @@ var bundler = watchify(browserify({
     entries: ['./js/main.js'],
     transform: "babelify",
     cache: {}, packageCache: {}, fullPaths: true
-  }))
-  .on("update", function () {
+  }));
+
+  bundler.on("update", function () {
     var updateStart = Date.now();
-    console.log(updateStart);
-    return bundler
+    
+    bundler
       .bundle()
       .pipe(exorcist(path.join(distPath, "bundle.js.map")))
       .pipe(fs.createWriteStream(path.join(distPath, "bundle.js")));
+
+    console.log("change detected, bundle compiled in " + (Date.now() - updateStart) + "s");
+
+    return bundler;
   })
   .bundle()
   .pipe(exorcist(path.join(distPath, "bundle.js.map")))
   .pipe(fs.createWriteStream(path.join(distPath, "bundle.js")));
+
+  console.log("Watching for source files change...");
