@@ -38,6 +38,8 @@ $ npm run build-dev
 * nasłuchuje na zmianach wszystkich modułów, od kótrych zależy `main.js` i przebudowuje tak samo jak `build-dev`,
 
 #### praca z jQuery
+
+commit: d14666f2cf9890e11298ec14b7d7af586cbba626
 ```sh
 $ npm install --save jquery
 ```
