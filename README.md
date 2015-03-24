@@ -43,6 +43,7 @@ TODO:
 - [ ] przykład dodania zależności via Bower
 	- https://github.com/eugeneware/debowerify,
 - [ ] taski `build-dev` i `watch` powinny korzystać z tej samej konfiguracji bundli,
+- [ ] rozwiązać problem niedziałającego `watch` na OS X,
 - [ ] dopisać task `build-prod`
 
 [node.js]:http://nodejs.org/
