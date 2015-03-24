@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var fs = require("fs");
+var path = require('path');
+var browserify = require("browserify");
+var babelify = require("babelify");
+var exorcist = require("exorcist");
+
+var srcPath = "./js/";
+var distPath = "./js-dist";
+
+browserify({
+    debug: true,
+    entries: ['./js/main.js'],
+    transform: "babelify"
+  })
+  .bundle()
+  .on('file', function (file, id, parent) {
+    console.log("file: " + id);
+  })
+  .on("error", function (err) {
+    console.log("Error: " + err.message);
+  })
+  .pipe(exorcist(path.join(distPath, "bundle.js.map")))
+  .pipe(fs.createWriteStream(path.join(distPath, "bundle.js")));
