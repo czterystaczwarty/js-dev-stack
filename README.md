@@ -11,10 +11,10 @@ Po co?
 
 Wymagania
 --------------
-* zainstalowany [node.js] (interpreter JavaScriptu w CLI),
+* zainstalowany [node.js],
 	* v0.10 powinno wystarczyć, ale...
     * [instalacja v0.12 na Ubuntu](https://nodesource.com/blog/nodejs-v012-iojs-and-the-nodesource-linux-repositories#the-nodesource-linux-repositories)
-* zainstalowany [npm] (Node Package Manager), 
+* zainstalowany [npm],
 
 Instalacja
 -----------
