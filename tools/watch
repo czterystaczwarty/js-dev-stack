@@ -5,6 +5,7 @@ var path = require('path');
 var watchify = require('watchify');
 var browserify = require('browserify');
 var babelify = require("babelify");
+var debowerify = require("debowerify");
 var exorcist = require("exorcist");
 
 var srcPath = "./js/";
@@ -13,7 +14,7 @@ var distPath = "./js-dist";
 var bundler = watchify(browserify({
     debug: true,
     entries: ['./js/main.js'],
-    transform: "babelify",
+    transform: ["babelify", "debowerify"],
     cache: {}, packageCache: {}, fullPaths: true
   }));
 

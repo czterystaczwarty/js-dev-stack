@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Simple example of modern js frontend development stack",
   "scripts": {
+    "install": "bower install",
     "build-dev": "tools/build-dev",
     "watch": "tools/watch"
   },
@@ -11,6 +12,7 @@
     "babel": "^4.7.16",
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
+    "debowerify": "^1.2.0",
     "exorcist": "^0.1.6",
     "watchify": "^2.6.0"
   },

@@ -55,10 +55,22 @@ jQuery = $ = require("jquery");
 window.jQuery = window.$ = jQuery;
 ```
 
+#### praca z modułami Bower'a
+```sh
+$ bower install --save lodash
+```
+```js
+var lodash = require("lodash");
+var _ = lodash;
+
+var arrayDiff = _.difference([1, 2, 3], [4, 2]);
+```
+
+
 TODO:
 --------
 - [x] przykład dodania zależności via npm (jQuery),
-- [ ] przykład dodania zależności via Bower
+- [x] przykład dodania zależności via Bower (Lodash)
 	- https://github.com/eugeneware/debowerify,
 - [ ] taski `build-dev` i `watch` powinny korzystać z tej samej konfiguracji bundli,
 - [ ] rozwiązać problem niedziałającego `watch` na OS X,
