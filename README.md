@@ -40,9 +40,9 @@ $ npm run watch
 ```
 * nasłuchuje na zmianach wszystkich modułów, od kótrych zależy `main.js` i przebudowuje tak samo jak `build-dev`,
 
-#### praca z jQuery
+#### praca z modułami npm
 
-commit: d14666f2cf9890e11298ec14b7d7af586cbba626
+commit: [d14666f2cf9890e11298ec14b7d7af586cbba626](https://github.com/czterystaczwarty/js-dev-stack/commit/d14666f2cf9890e11298ec14b7d7af586cbba626)
 ```sh
 $ npm install --save jquery
 ```
@@ -56,6 +56,9 @@ window.jQuery = window.$ = jQuery;
 ```
 
 #### praca z modułami Bower'a
+
+commit: [0b19a45c81a291e3dd241abb2b8f135a1b532cfc](https://github.com/czterystaczwarty/js-dev-stack/commit/0b19a45c81a291e3dd241abb2b8f135a1b532cfc)
+
 ```sh
 $ bower install --save lodash
 ```
@@ -80,4 +83,5 @@ TODO:
 [npm]:https://docs.npmjs.com/getting-started/what-is-npm
 [Browserify]:http://browserify.org/
 [Bower]:https://bower.io
+[Bower'a]:https://bower.io
 [Babel.js]:http://babeljs.io
