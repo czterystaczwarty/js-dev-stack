@@ -15,6 +15,7 @@ Wymagania
 	* v0.10 powinno wystarczyć, ale...
     * [instalacja v0.12 na Ubuntu](https://nodesource.com/blog/nodejs-v012-iojs-and-the-nodesource-linux-repositories#the-nodesource-linux-repositories)
 * zainstalowany [npm],
+* zainstalowany [bower](http://bower.io/#install-bower)
 
 Instalacja
 -----------
