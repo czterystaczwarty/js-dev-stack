@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var fs = require("fs");
+var path = require('path');
+var browserify = require("browserify");
+var babelify = require("babelify");
+var debowerify = require("debowerify");
+var exorcist = require("exorcist");
+
+var srcPath = "./js/";
+var distPath = "./js-dist";
+
+browserify({
+// enable source maps
+debug: true,
+// start from
+entries: ['./js/es6-example/app.js'],
+// translate ES6 to ES5, load Bower packages
+transform: ["babelify", "debowerify"]
+})
+// build bundle
+.bundle()
+.on('file', function (file, id, parent) {
+console.log("file: " + id);
+})
+.on("error", function (err) {
+console.log("Error: " + err.message);
+})
+// move source to separate file
+.pipe(exorcist(path.join(distPath, "example-es6.js.map")))
+// write bundle to bundle.js
+.pipe(fs.createWriteStream(path.join(distPath, "example-es6.js")));

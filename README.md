@@ -35,6 +35,17 @@ $ npm run build-dev
 	* [ECMAScript 6 equivalents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5),
 * generuje plik [source map](https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info), dzięki któremu w Chrome DevTools widzimy kod poszczególnych modułów w ES6 zamiast załączonego do `index.html` bundla w ES5,
 
+#### Task `build-example-es6`
+```sh
+$ npm run build-example-es6
+```
+Task budujący przykładowe użycie klas ES6 oraz konwencji exportów CommonJS. Wynikowe pliki:
+- example-es6.js
+- example-es6.js.map
+
+Wynik dziąłania skryptu można zobaczyć w przeglądarce.
+
+
 #### Task `watch`
 ```sh
 $ npm run watch

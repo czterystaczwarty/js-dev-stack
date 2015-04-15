@@ -5,6 +5,7 @@
   "scripts": {
     "install": "bower install",
     "build-dev": "tools/build-dev",
+	"build-example-es6": "tools/build-example-es6",
     "watch": "tools/watch"
   },
   "author": "Tomasz Szopiński",
