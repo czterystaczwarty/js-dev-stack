@@ -42,6 +42,7 @@ $ npm run build-example-es6
 Task budujący przykładowe użycie klas ES6 oraz konwencji exportów CommonJS. Wynikowe pliki:
 - example-es6.js
 - example-es6.js.map
+
 Wynik dziąłania skryptu można zobaczyć w przeglądarce.
 
 
