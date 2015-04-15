@@ -26,7 +26,7 @@ browserify({
   .on("error", function (err) {
     console.log("Error: " + err.message);
   })
-  // move source to separate file
+  // move source map to separate file
   .pipe(exorcist(path.join(distPath, "bundle.js.map")))
   // write bundle to bundle.js
   .pipe(fs.createWriteStream(path.join(distPath, "bundle.js")));
