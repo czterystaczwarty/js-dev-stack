@@ -39,7 +39,7 @@ $ ./js-dev-stack {build|watch} [Input File] [Output File]
 * generuje plik [source map](https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info), dzięki któremu w Chrome DevTools widzimy kod poszczególnych modułów w ES6 zamiast załączonego do `index.html` bundla w ES5,
 
 #### Task `watch`
-* nasłuchuje na zmianach wszystkich modułów, od kótrych zależy `main.js` i przebudowuje tak samo jak `build-dev`
+* nasłuchuje na zmianach wszystkich modułów, od kótrych zależy `plik wejściowy` i przebudowuje tak samo jak `build`
 
 
 ------
