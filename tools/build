@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+var fs = require("fs");
+var path = require('path');
+var browserify = require("browserify");
+var babelify = require("babelify");
+var debowerify = require("debowerify");
+var exorcist = require("exorcist");
+
+var inputFile = "../" + process.argv[2];
+var distPath = "../" + process.argv[3];
+
+process.argv.forEach(function(val, index, array) {
+	console.log(index + ': ' + val);
+});
+
+
+browserify({
+	// enable source maps
+	debug: true,
+	// start from
+	entries: [inputFile],
+	// translate ES6 to ES5, load Bower packages
+	transform: ["babelify", "debowerify"]
+})
+// build bundle
+.bundle()
+.on('file', function (file, id, parent) {
+	console.log("file: " + id);
+})
+.on("error", function (err) {
+	console.log("Error: " + err.message);
+})
+// move source to separate file
+	.pipe(exorcist(distPath + '.map'))
+// write bundle to bundle.js
+	.pipe(fs.createWriteStream(distPath));

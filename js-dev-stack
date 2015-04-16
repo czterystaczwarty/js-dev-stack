@@ -1,0 +1,30 @@
+#!/bin/bash
+
+node="$(which nodejs 2>/dev/null)";
+if [ $? -gt 0 ];
+	then node="$(which node)";
+fi
+
+case "$1" in
+	build)
+		# Start build task 
+		cd tools
+		"$node" build "$2" "$3"
+		;;
+	watch)
+		# Start watch task
+		cd tools
+		"$node" watch "$2" "$3"
+		;;
+	*)
+		echo "Welcome to NodeBB"
+		echo $"Usage: $0 {build|watch} [Input file] [Output file]"
+		echo ''
+		column -s '	' -t <<< '
+		build	Build bundle file from Input file
+		watch	Live build on external changes
+		'
+		echo ''
+		exit 1
+esac
+
