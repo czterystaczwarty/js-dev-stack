@@ -6,7 +6,7 @@ jQuery = $ = require("jquery");
 window.jQuery = window.$ = jQuery;
 
 // Bower module
-var lodash = require("../bower_clodash");
+var lodash = require("../bower_components/lodash/lodash");
 var _ = lodash;
 
 var module1 = require("./module1");
