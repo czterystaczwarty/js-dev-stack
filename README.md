@@ -22,35 +22,27 @@ Instalacja
 1. Klonujemy repo i wchodimy do katalogu
 2. Wklepujemy `$ npm install`
 
-Funckje
----------
-
-#### Task `build-dev`
+Użycie
+-------
 ```sh
-$ npm run build-dev
+$ ./js-dev-stack {build|watch} [Input File] [Output File]
 ```
-* dzięki Browserify sprawdza rekurencyjnie wszystkie zależności pliku `js/main.js` i łączy je w jeden `js-dist/bundle.js`,
+
+- `Input File` - Ścieżka do pliku wejściowego,
+- `Output File` - Ścieżka do pliku wynikowego
+
+#### Task `build`
+* dzięki Browserify sprawdza rekurencyjnie wszystkie zależności,
 * każdy moduł ma swoje prywatne `var` i publiczne `module.exports`,
 * dzięki Babel.js transpiluje znalezione w modułach konstrukcje w ES6 do ES5
-	* [ECMAScript 6 equivalents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5),
+* [ECMAScript 6 equivalents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5),
 * generuje plik [source map](https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info), dzięki któremu w Chrome DevTools widzimy kod poszczególnych modułów w ES6 zamiast załączonego do `index.html` bundla w ES5,
 
-#### Task `build-example-es6`
-```sh
-$ npm run build-example-es6
-```
-Task budujący przykładowe użycie klas ES6 oraz konwencji exportów CommonJS. Wynikowe pliki:
-- example-es6.js
-- example-es6.js.map
-
-Wynik dziąłania skryptu można zobaczyć w przeglądarce.
-
-
 #### Task `watch`
-```sh
-$ npm run watch
-```
-* nasłuchuje na zmianach wszystkich modułów, od kótrych zależy `main.js` i przebudowuje tak samo jak `build-dev`,
+* nasłuchuje na zmianach wszystkich modułów, od kótrych zależy `plik wejściowy` i przebudowuje tak samo jak `build`
+
+
+------
 
 #### praca z modułami npm
 
@@ -87,6 +79,7 @@ TODO:
 - [x] przykład dodania zależności via npm (jQuery),
 - [x] przykład dodania zależności via Bower (Lodash)
 	- https://github.com/eugeneware/debowerify,
+- [x] cli do budowania
 - [ ] taski `build-dev` i `watch` powinny korzystać z tej samej konfiguracji bundli,
 - [ ] rozwiązać problem niedziałającego `watch` na OS X,
 - [ ] dopisać task `build-prod`
